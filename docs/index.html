@@ -10,63 +10,83 @@
 
   <div id="head_actor1" class="head_actor1" style="margin-right:5px;"></div>
   <div id="head_actor2" class="head_actor2" style="margin-left:5px;"></div>
+  <button id="reshuffle1" class="reshuffle" style="margin-right:5px;">Reshuffle</button>
+  <button id="reshuffle2" class="reshuffle" style="margin-left:5px;">Reshuffle</button>
 
   <button class="prompt_decision" id="add_links?">Connect More Actors</button>
   <button class="prompt_decision" id="final_connection">Name The Linking Movie</button>
 
-  <button id="head_link_button1" class="link_button">Add Link</button>
-  <button id="head_link_button2" class="link_button">Add Link</button>
+  <button id="head_link_button1" class="link_button" style="margin-right:25px;">Add Link</button>
+  <button id="head_link_button2" class="link_button" style="margin-left:25px;">Add Link</button>
+  <button id="back_button" class="prompt_decision" style="display:none; width:calc(50% - 50px);">Back</button>
 
-
-  <div id="overlay">
-    <div id="hidden_entry_panel">
-      <input class="user_input" id="movie_input" type="text" name="movie_input" placeholder="Movie..." style="margin-top:40px;">
-      <input class="user_input" type="text" placeholder="Actor..." id="actor_input" name="actor_input" style="display:none; margin-top:20px;">
-      <button id="submit_link"><span>&#10003;</span></button>
-    </div>
+  <div id="overlay"></div>
+  <div id="hidden_entry_panel">
+    <button id="close_out">X</button>
+    <input class="user_input" id="movie_input" type="text" name="movie_input" placeholder="Movie..." style="margin-top:50px;">
+    <input class="user_input" type="text" placeholder="Actor..." id="actor_input" name="actor_input" style="display:none; margin-top:20px;">
+    <button id="submit_link"><span>&#10003;</span></button>
   </div>
 
 <script>
 
+var id;
+var actors;
+
+function return_home(){
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("hidden_entry_panel").style.display = "none";
+  document.getElementById("back_button").style.display = "none";
+  document.getElementById("head_link_button1").style.display = "none";
+  document.getElementById("head_link_button2").style.display = "none";
+  document.getElementById("add_links?").style.display = "flex";
+  document.getElementById("final_connection").style.display = "flex";
+}
+
 function generate_links(){
-  document.getElementById("submit_link").addEventListener("click", add_link);
-  document.getElementById("add_links?").remove();
-  document.getElementById("final_connection").remove();
+  document.getElementById("add_links?").style.display = "none";
+  document.getElementById("final_connection").style.display = "none";
   var links = document.getElementsByClassName("link_button");
   for (var i=0; i < links.length; i++){
     links[i].style.display = "flex";
   }
+  document.getElementById("back_button").style.display = "flex";
+  document.getElementById("submit_link").removeEventListener("click", final_submit);
+  document.getElementById("submit_link").addEventListener("click", add_link);
 }
 
 function link_the_actors(){
   document.getElementById("overlay").style.display = "flex";
+  document.getElementById("hidden_entry_panel").style.display = "block";
   document.getElementById("actor_input").style.display = "none";
-  document.getElementById("movie_input").style.marginTop = "60px";
-
+  document.getElementById("movie_input").style.marginTop = "75px";
   document.getElementById("submit_link").removeEventListener("click", add_link);
   document.getElementById("submit_link").addEventListener("click", final_submit);
 }
 
-var id;
-
 function open_hidden_panel(indicator){
   document.getElementById("overlay").style.display = "flex";
+  document.getElementById("hidden_entry_panel").style.display = "block";
+  document.getElementById("movie_input").style.marginTop = "50px";
   document.getElementById("actor_input").style.display = "flex";
-
   id = indicator;
   return id;
 }
 
 function add_link(){
+  document.getElementById("reshuffle1").style.marginBottom = "2px";
+  document.getElementById("reshuffle2").style.marginBottom = "2px";
 
   var movie = document.getElementById("movie_input").value;
   var new_actor = document.getElementById("actor_input").value;
 
   document.getElementById("overlay").style.display = "none";
+  document.getElementById("hidden_entry_panel").style.display = "none";
+  document.getElementById("add_links?").remove();
+  document.getElementById("final_connection").remove();
   document.getElementById("head_link_button1").remove();
   document.getElementById("head_link_button2").remove();
-  document.getElementById("movie_input").value = "";
-  document.getElementById("actor_input").value = "";
+  document.getElementById("back_button").remove();
 
   var new_actor_display = document.createElement('div');
   new_actor_display.innerHTML = new_actor;
@@ -119,6 +139,15 @@ function add_link(){
   link_button2.id = "head_link_button2";
   link_button2.value = "Add Link";
 
+  var back_button = document.createElement("input");
+  back_button.type = "button";
+  back_button.onclick = return_home;
+  back_button.className = "prompt_decision";
+  back_button.id="back_button";
+  back_button.value = "Back";
+  back_button.style.display = "none";
+  back_button.style.width = "calc(50% - 50px)";
+
   if (id == "head_link_button1"){
     half_sep.style.marginRight = "5px";
     document.body.appendChild(half_sep);
@@ -135,6 +164,7 @@ function add_link(){
     document.body.appendChild(final_connection_button);
     document.body.appendChild(link_button1);
     document.body.appendChild(link_button2);
+    document.body.appendChild(back_button);
   }
   else if (id == "head_link_button2"){
     full_sep.style.marginRight = "5px";
@@ -152,15 +182,28 @@ function add_link(){
     document.body.appendChild(final_connection_button);
     document.body.appendChild(link_button1);
     document.body.appendChild(link_button2);
+    document.body.appendChild(back_button);
     }
 }
-
-var actors;
 
 function get_random_actor(names){
   var random = Math.floor(Math.random() * names.length);
   var random_actor = names[random];
   return random_actor;
+}
+
+function reshuffle(num){
+  var new_actor = get_random_actor(actors);
+  actors.splice(actors.indexOf(new_actor), 1);
+
+  if(num == "1"){
+    document.getElementById("head_actor1").innerHTML = new_actor;
+  }
+  else if(num == "2"){
+    document.getElementById("head_actor2").innerHTML = new_actor;
+  }
+
+  return actors
 }
 
 window.onload = async function get_actors(){
@@ -178,12 +221,12 @@ window.onload = async function get_actors(){
 }
 
 function final_submit(){
-
   var movie = document.getElementById("movie_input").value;
 
   document.getElementById("overlay").style.display = "none";
-  document.getElementById("add_links?").style.display = "none";
-  document.getElementById("final_connection").style.display = "none";
+  document.getElementById("hidden_entry_panel").style.display = "none";
+  document.getElementById("add_links?").remove();
+  document.getElementById("final_connection").remove();
 
   var final_link_space = document.createElement("div");
   final_link_space.className = "final_link_space";
@@ -192,7 +235,7 @@ function final_submit(){
   var movie_insert = document.createElement("div");
   movie_insert.className = "movie_insert";
   movie_insert.innerHTML = movie;
-  movie_insert.style.width = "calc(100% - 250px)";
+  movie_insert.style.width = "75%";
   movie_insert.style.margin = "auto";
   movie_insert.setAttribute("contenteditable", "true");
   final_link_space.appendChild(sep_line);
