@@ -70,12 +70,14 @@ function add_link(){
 
   var new_actor_display = document.createElement('div');
   new_actor_display.innerHTML = new_actor;
+  new_actor_display.setAttribute("contenteditable", "true");
 
   var half_sep = document.createElement("div");
   half_sep.className = "linking_space";
   var movie_insert = document.createElement("div");
   movie_insert.className = "movie_insert";
   movie_insert.innerHTML = movie;
+  movie_insert.setAttribute("contenteditable", "true");
   var half_line1 = document.createElement("div");
   half_line1.className = "half_line";
   var half_line2 = half_line1.cloneNode(true);
@@ -127,6 +129,7 @@ function add_link(){
     document.body.appendChild(new_actor_display);
     var comp_actor_list = document.getElementsByClassName("head_actor2")
     var comp_actor = comp_actor_list[comp_actor_list.length - 1].cloneNode(true);
+    comp_actor.setAttribute("contenteditable", "true");
     document.body.appendChild(comp_actor);
     document.body.appendChild(add_links_button);
     document.body.appendChild(final_connection_button);
@@ -140,6 +143,7 @@ function add_link(){
     document.body.appendChild(half_sep);
     var comp_actor_list = document.getElementsByClassName("head_actor1");
     var comp_actor = comp_actor_list[comp_actor_list.length - 1].cloneNode(true);
+    comp_actor.setAttribute("contenteditable", "true");
     document.body.appendChild(comp_actor);
     new_actor_display.style.marginLeft = "5px";
     new_actor_display.className = "head_actor2";
@@ -190,6 +194,7 @@ function final_submit(){
   movie_insert.innerHTML = movie;
   movie_insert.style.width = "calc(100% - 250px)";
   movie_insert.style.margin = "auto";
+  movie_insert.setAttribute("contenteditable", "true");
   final_link_space.appendChild(sep_line);
   final_link_space.appendChild(movie_insert);
   document.body.appendChild(final_link_space);
