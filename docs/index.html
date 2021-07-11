@@ -20,7 +20,7 @@
 
   <div id="overlay">
     <div id="hidden_entry_panel">
-      <input class="user_input" id="movie_input" type="text" name="movie_input" placeholder="Movie...">
+      <input class="user_input" id="movie_input" type="text" name="movie_input" placeholder="Movie..." style="margin-top:40px;">
       <input class="user_input" type="text" placeholder="Actor..." id="actor_input" name="actor_input" style="display:none;">
       <button id="submit_link"><span>&#10003;</span></button>
     </div>
@@ -41,7 +41,7 @@ function generate_links(){
 function link_the_actors(){
   document.getElementById("overlay").style.display = "flex";
   document.getElementById("actor_input").style.display = "none";
-  document.getElementById("movie_input").style.marginTop = "150px";
+  document.getElementById("movie_input").style.marginTop = "60px";
 
   document.getElementById("submit_link").removeEventListener("click", add_link);
   document.getElementById("submit_link").addEventListener("click", final_submit);
@@ -188,7 +188,7 @@ function final_submit(){
   var movie_insert = document.createElement("div");
   movie_insert.className = "movie_insert";
   movie_insert.innerHTML = movie;
-  movie_insert.style.width = "calc(100% - 400px)";
+  movie_insert.style.width = "calc(100% - 250px)";
   movie_insert.style.margin = "auto";
   final_link_space.appendChild(sep_line);
   final_link_space.appendChild(movie_insert);
