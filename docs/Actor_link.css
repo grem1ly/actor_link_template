@@ -68,12 +68,12 @@
 }
 
 .user_input{
+	display: flex;
 	height: 35px;
-	width: calc(100% - 28px);
 	border: 2px solid black;
 	border-radius: 5px;
-	margin: 10px 10px 10px 10px;
-	<!--top, left, bottom, right-->
+	margin: 10px auto 10px auto;
+	/*top, left, bottom, right*/
 }
 
 #submit_link{
