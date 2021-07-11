@@ -1,6 +1,4 @@
 
-@media (max-width: 480px) {
-
 .head_actor1{
 	float: left;
 	display: flex;
@@ -153,5 +151,4 @@
 	border: 2px solid white;
 	background: white;
 	border-radius: 5px;
-}
 }
