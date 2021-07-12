@@ -111,40 +111,35 @@ function add_link(){
   full_line.className = "full_line";
   full_sep.appendChild(full_line);
 
-  var add_links_button = document.createElement("input");
-  add_links_button.type = "button";
+  var add_links_button = document.createElement("BUTTON");
   add_links_button.onclick = generate_links;
   add_links_button.id = "add_links?";
   add_links_button.className = "prompt_decision";
-  add_links_button.value = "Connect More Actors";
+  add_links_button.innerHTML = "Connect More Actors";
 
-  var final_connection_button = document.createElement("input");
-  final_connection_button.type = "button";
+  var final_connection_button = document.createElement("BUTTON");
   final_connection_button.onclick = link_the_actors;
   final_connection_button.id = "final_connection";
   final_connection_button.className = "prompt_decision";
-  final_connection_button.value = "Name The Linking Movie";
+  final_connection_button.innerHTML = "Name The Linking Movie";
 
-  var link_button1 = document.createElement('input');
-  link_button1.type = "button";
+  var link_button1 = document.createElement('BUTTON');
   link_button1.onclick = function(){open_hidden_panel(this.id)};
   link_button1.className = "link_button";
   link_button1.id = "head_link_button1";
-  link_button1.value = "Add Link";
+  link_button1.innerHTML = "Add Link";
 
-  var link_button2 = document.createElement('input');
-  link_button2.type = "button";
+  var link_button2 = document.createElement('BUTTON');
   link_button2.onclick = function(){open_hidden_panel(this.id)};
   link_button2.className = "link_button";
   link_button2.id = "head_link_button2";
-  link_button2.value = "Add Link";
+  link_button2.innerHTML = "Add Link";
 
-  var back_button = document.createElement("input");
-  back_button.type = "button";
+  var back_button = document.createElement("BUTTON");
   back_button.onclick = return_home;
   back_button.className = "prompt_decision";
   back_button.id="back_button";
-  back_button.value = "Back";
+  back_button.innerHTML = "Back";
   back_button.style.display = "none";
   back_button.style.width = "calc(50% - 50px)";
 
