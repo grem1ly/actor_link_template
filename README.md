@@ -10,19 +10,19 @@ Check it out: [Template](https://grem1ly.github.io/actor_link_template/)
 
   <p align="center">
   <b>Simple Example:</b></br>
-  ![Alt](/figures/simple.PNG)</br>
+  ![Simple Example](/images/simple.PNG)</br>
   </p>
 
   <p align="center">
   <b>Complex Example:</b></br>
-  ![Alt](/figures/complex.PNG)
+  ![Complex Example](/images/complex.PNG)
   </p>
 
   So, if you need to connect more actors, you have to also link them with a movie each time. I think that the more complicated the connection, the more fun the game is. The caveat to this, however, is that once more and more connections are added, it's difficult to remember all of them. Therefore, I have created a template so you don't have to remember.  
 
 ## How to Play
 
-  * **Step 1:** Once the website is loaded, you will be prompted with two random actor names ([list](docs/actor_names.csv)). Feel free &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to shuffle them individually by clicking the "Reshuffle" button below each name, or &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refresh the page to start over and be prompted with two new names.
+  * **Step 1:** Once the website is loaded, you will be prompted with two random actor names ([list](docs/actor_names.csv)). Feel free to shuffle them individually by clicking the "Reshuffle" button below each name, or refresh the page to start over and be prompted with two new names.
 
   * **Step 2:** If you can connect the actors immediately with a common movie, click the "Name The Linking Movie" button and fill out the prompt. To exit or "go back," click the "x" or the surrounding grey area. Once the prompt is completed and the "<span>&#10003;</span>" button is clicked, the connection is presented and the "game" is over. Refresh the page to play again.
 
