@@ -10,24 +10,26 @@ Check it out: [Template](https://grem1ly.github.io/actor_link_template/)
 
   <p align="center">
   <b>Simple Example:</b></br>
-  ![Simple Example](/figures/simple.png)</br>
+  ![Alt](/figures/simple.PNG)</br>
+  </p>
 
+  <p align="center">
   <b>Complex Example:</b></br>
-  ![Complex Example](/figures/complex.png)
+  ![Alt](/figures/complex.PNG)
   </p>
 
   So, if you need to connect more actors, you have to also link them with a movie each time. I think that the more complicated the connection, the more fun the game is. The caveat to this, however, is that once more and more connections are added, it's difficult to remember all of them. Therefore, I have created a template so you don't have to remember.  
 
 ## How to Play
 
-  Step 1: Once the website is loaded, you will be prompted with two random actor names ([list](docs/actor_names.csv)). Feel free to shuffle them individually by clicking the "Reshuffle" button below each name, or refresh the page to start over and be prompted with two new names.
+  * **Step 1:** Once the website is loaded, you will be prompted with two random actor names ([list](docs/actor_names.csv)). Feel free &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to shuffle them individually by clicking the "Reshuffle" button below each name, or &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refresh the page to start over and be prompted with two new names.
 
-  Step 2: If you can connect the actors immediately with a common movie, click the "Name The Linking Movie" button and fill out the prompt. To exit or "go back," click the "x" or the surrounding grey area. Once the prompt is completed and the "<span>&#10003;</span>" button is clicked, the connection is presented and the "game" is over. Refresh the page to play again.
+  * **Step 2:** If you can connect the actors immediately with a common movie, click the "Name The Linking Movie" button and fill out the prompt. To exit or "go back," click the "x" or the surrounding grey area. Once the prompt is completed and the "<span>&#10003;</span>" button is clicked, the connection is presented and the "game" is over. Refresh the page to play again.
 
-  Step 3: If more actors are needed to complete the connection, click the "Connect More Actors" button.
+  * **Step 3:** If more actors are needed to complete the connection, click the "Connect More Actors" button.
 
-  Step 4: Once the previous step is completed, you will be prompted with a choice to either link a new actor with the preselected actor on the left or to link a new actor with the preselected actor on the right. In the complex example above, I would click on the "Add Link" button under Idris Elba's name since I made the first connection with him. Fill out the prompt with the linking actor as well as the movie in which they both star and then click the "<span>&#10003;</span>" button to continue.
+  * **Step 4:** Once the previous step is completed, you will be prompted with a choice to either link a new actor with the preselected actor on the left or to link a new actor with the preselected actor on the right. In the complex example above, I would click on the "Add Link" button under Idris Elba's name since I made the first connection with him. Fill out the prompt with the linking actor as well as the movie in which they both star and then click the "<span>&#10003;</span>" button to continue.
 
-  Step 5: Repeat Steps 2 - 4.
+  * **Step 5:** Repeat Steps 2 - 4.
 
   **Note:** All added connections can be edited after the fact. This means that if for some reason, I wanted to connect Idris Elba to Charlize Theron in Prometheus instead of Anthony Mackie in Avengers: Age of Ultron, I can select the box with Anthony Mackie's name, and change it to Charlize Theron just as with the box with the connecting movie. The preselected actors cannot be altered in this way.
