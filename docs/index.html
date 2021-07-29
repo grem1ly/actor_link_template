@@ -74,8 +74,8 @@ function open_hidden_panel(indicator){
 }
 
 function add_link(){
-  document.getElementById("reshuffle1").style.marginBottom = "2px";
-  document.getElementById("reshuffle2").style.marginBottom = "2px";
+  document.getElementById("reshuffle1").style.display = "none";
+  document.getElementById("reshuffle2").style.display = "none";
 
   var movie = document.getElementById("movie_input").value;
   var new_actor = document.getElementById("actor_input").value;
@@ -216,6 +216,10 @@ window.onload = async function get_actors(){
 }
 
 function final_submit(){
+
+  document.getElementById("reshuffle1").style.display = "none";
+  document.getElementById("reshuffle2").style.display = "none";
+  
   var movie = document.getElementById("movie_input").value;
 
   document.getElementById("overlay").style.display = "none";
