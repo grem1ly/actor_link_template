@@ -11,7 +11,7 @@
   <div id="start_screen">
     <div id="start_image"></div>
     <div id="title">Connect the Actors!</div>
-    <button id="play">Play</button>
+    <button id="play_game">Play</button>
   </div>
 
   <div id="template" style="display:none;">
@@ -47,6 +47,7 @@ function play(){
   document.getElementById("start_screen").style.display = "none";
   document.getElementById("template").style.display = "block";
   document.body.style.margin = "10px";
+  document.body.style.overflow = "visible";
   get_actors();
 }
 

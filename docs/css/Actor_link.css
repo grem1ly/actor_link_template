@@ -2,7 +2,8 @@
 body{
 	background: whitesmoke;
 	margin: 0px;
-	height: 100%
+	height: 100%;
+	overflow: hidden;
 }
 
 #start_screen{
@@ -12,7 +13,6 @@ body{
 	font-family: Georgia, Times, Times New Roman, serif; 
 	font-size: 22px;
 	height: 100vh;
-	overflow: hidden;
 }
 
 #start_image{
@@ -37,7 +37,7 @@ body{
 	z-index: 100;
 }
 
-#play {
+#play_game {
 	position: absolute;
 	top: 38%;
 	left: 50%;
