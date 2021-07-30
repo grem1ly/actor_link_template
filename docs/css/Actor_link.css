@@ -41,6 +41,7 @@ body{
 	height: 30px;
 	width: 50px;
 	cursor: pointer;
+	z-index: 100;
 }
 
 .head_actor1{
