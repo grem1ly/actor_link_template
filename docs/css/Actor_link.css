@@ -12,15 +12,20 @@ body{
 	color: white;
 	font-family: Georgia, Times, Times New Roman, serif; 
 	font-size: 22px;
+	height: 100vh;
 }
 
 #start_image{
-	height: 105vh;
-	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
   	background-image: url("../background_images/start.jpg");
   	background-repeat: no-repeat;
   	background-size: cover;
-	background-position: center bottom;	
+	background-position: center bottom;
+	z-index: 50;	
 }
 
 #title{
@@ -29,6 +34,7 @@ body{
   	left: 50%;
   	transform: translate(-50%, -50%);
 	width: 100%;
+	z-index: 100;
 }
 
 #play_game {
@@ -41,6 +47,8 @@ body{
 	height: 30px;
 	width: 50px;
 	cursor: pointer;
+	background: whitesmoke;
+	z-index: 100;
 }
 
 .head_actor1{
