@@ -1,4 +1,6 @@
 
+document.getElementById("play").addEventListener("click", play);
+
 document.getElementById("reshuffle1").addEventListener("click", function() {
   reshuffle("1")});
 document.getElementById("reshuffle2").addEventListener("click", function() {

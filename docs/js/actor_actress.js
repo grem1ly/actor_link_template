@@ -25,7 +25,7 @@ function get(url) {
 }
 
 async function read_actor_file() {
-  var actor_file = './actor_names.csv';
+  var actor_file = '../data/actor_names.csv';
   var rawdata = await get(actor_file);
   var lines = rawdata.split("\n");
   var actors = lines.splice(1).map(function(line){ return line.replaceAll("\r", "").replaceAll("\"", "") });

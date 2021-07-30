@@ -3,35 +3,97 @@
 <head>
   <title>Actor Link Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel = "stylesheet" href="Actor_link.css">
-  <script type="text/javascript" src="actor_actress.js"></script>
+  <link rel = "stylesheet" href="./css/Actor_link.css">
+  <script type="text/javascript" src="./js/actor_actress.js"></script>
 </head>
 <body>
 
-  <div id="head_actor1" class="head_actor1" style="margin-right:5px;"></div>
-  <div id="head_actor2" class="head_actor2" style="margin-left:5px;"></div>
-  <button id="reshuffle1" class="reshuffle" style="margin-right:5px;">Reshuffle</button>
-  <button id="reshuffle2" class="reshuffle" style="margin-left:5px;">Reshuffle</button>
+  <div id="start_screen">
+    <div id="start_image"></div>
+    <div id="title">Connect the Actors!</div>
+    <button id="play">Play</button>
+  </div>
 
-  <button class="prompt_decision" id="add_links?">Connect More Actors</button>
-  <button class="prompt_decision" id="final_connection">Name The Linking Movie</button>
+  <div id="template" style="display:none;">
 
-  <button id="head_link_button1" class="link_button" style="margin-right:25px;">Add Link</button>
-  <button id="head_link_button2" class="link_button" style="margin-left:25px;">Add Link</button>
-  <button id="back_button" class="prompt_decision" style="display:none; width:calc(50% - 50px);">Back</button>
+    <div id="head_actor1" class="head_actor1" style="margin-right:5px;"></div>
+    <div id="head_actor2" class="head_actor2" style="margin-left:5px;"></div>
+    <button id="reshuffle1" class="reshuffle" style="margin-right:5px;">Reshuffle</button>
+    <button id="reshuffle2" class="reshuffle" style="margin-left:5px;">Reshuffle</button>
 
-  <div id="overlay"></div>
-  <div id="hidden_entry_panel">
-    <button id="close_out">X</button>
-    <input class="user_input" id="movie_input" type="text" name="movie_input" placeholder="Movie..." style="margin-top:50px;">
-    <input class="user_input" type="text" placeholder="Actor..." id="actor_input" name="actor_input" style="display:none; margin-top:20px;">
-    <button id="submit_link"><span>&#10003;</span></button>
+    <button class="prompt_decision" id="add_links?">Connect More Actors</button>
+    <button class="prompt_decision" id="final_connection">Name The Linking Movie</button>
+
+    <button id="head_link_button1" class="link_button" style="margin-right:25px;">Add Link</button>
+    <button id="head_link_button2" class="link_button" style="margin-left:25px;">Add Link</button>
+    <button id="back_button" class="prompt_decision" style="display:none; width:calc(50% - 50px);">Back</button>
+
+    <div id="overlay"></div>
+    <div id="hidden_entry_panel">
+      <button id="close_out">X</button>
+      <input class="user_input" id="movie_input" type="text" name="movie_input" placeholder="Movie..." style="margin-top:50px;">
+      <input class="user_input" type="text" placeholder="Actor..." id="actor_input" name="actor_input" style="display:none; margin-top:20px;">
+      <button id="submit_link"><span>&#10003;</span></button>
+    </div>
+
   </div>
 
 <script>
 
 var id;
 var actors;
+
+function play(){
+  document.getElementById("start_screen").style.display = "none";
+  document.getElementById("template").style.display = "block";
+  document.body.style.margin = "10px";
+  document.body.style.overflow = "visible";
+  get_actors();
+}
+
+function get_random_actor(names){
+  var random = Math.floor(Math.random() * names.length);
+  var random_actor = names[random];
+  return random_actor;
+}
+
+async function get_actors(){
+  var actors_array = await read_actor_file();
+  random_actor1 = get_random_actor(actors_array);
+  actors_array.splice(actors_array.indexOf(random_actor1), 1);
+  random_actor2 = get_random_actor(actors_array);
+  actors_array.splice(actors_array.indexOf(random_actor2), 1);
+
+  document.getElementById("head_actor1").innerHTML = random_actor1;
+  document.getElementById("head_actor2").innerHTML = random_actor2;
+
+  actors = actors_array;
+  return actors
+}
+
+function reshuffle(num){
+  var new_actor = get_random_actor(actors);
+  actors.splice(actors.indexOf(new_actor), 1);
+
+  if(num == "1"){
+    document.getElementById("head_actor1").innerHTML = new_actor;
+  }
+  else if(num == "2"){
+    document.getElementById("head_actor2").innerHTML = new_actor;
+  }
+
+  return actors
+}
+
+
+function open_hidden_panel(indicator){
+  document.getElementById("overlay").style.display = "flex";
+  document.getElementById("hidden_entry_panel").style.display = "block";
+  document.getElementById("movie_input").style.marginTop = "50px";
+  document.getElementById("actor_input").style.display = "flex";
+  id = indicator;
+  return id;
+}
 
 function return_home(){
   document.getElementById("overlay").style.display = "none";
@@ -62,15 +124,6 @@ function link_the_actors(){
   document.getElementById("movie_input").style.marginTop = "75px";
   document.getElementById("submit_link").removeEventListener("click", add_link);
   document.getElementById("submit_link").addEventListener("click", final_submit);
-}
-
-function open_hidden_panel(indicator){
-  document.getElementById("overlay").style.display = "flex";
-  document.getElementById("hidden_entry_panel").style.display = "block";
-  document.getElementById("movie_input").style.marginTop = "50px";
-  document.getElementById("actor_input").style.display = "flex";
-  id = indicator;
-  return id;
 }
 
 function add_link(){
@@ -181,45 +234,11 @@ function add_link(){
     }
 }
 
-function get_random_actor(names){
-  var random = Math.floor(Math.random() * names.length);
-  var random_actor = names[random];
-  return random_actor;
-}
-
-function reshuffle(num){
-  var new_actor = get_random_actor(actors);
-  actors.splice(actors.indexOf(new_actor), 1);
-
-  if(num == "1"){
-    document.getElementById("head_actor1").innerHTML = new_actor;
-  }
-  else if(num == "2"){
-    document.getElementById("head_actor2").innerHTML = new_actor;
-  }
-
-  return actors
-}
-
-window.onload = async function get_actors(){
-  var actors_array = await read_actor_file();
-  random_actor1 = get_random_actor(actors_array);
-  actors_array.splice(actors_array.indexOf(random_actor1), 1);
-  random_actor2 = get_random_actor(actors_array);
-  actors_array.splice(actors_array.indexOf(random_actor2), 1);
-
-  document.getElementById("head_actor1").innerHTML = random_actor1;
-  document.getElementById("head_actor2").innerHTML = random_actor2;
-
-  actors = actors_array;
-  return actors
-}
-
 function final_submit(){
 
   document.getElementById("reshuffle1").style.display = "none";
   document.getElementById("reshuffle2").style.display = "none";
-  
+
   var movie = document.getElementById("movie_input").value;
 
   document.getElementById("overlay").style.display = "none";
@@ -244,7 +263,7 @@ function final_submit(){
 
 </script>
 
-<script type="text/javascript" src="./buttons.js"></script>
+<script type="text/javascript" src="./js/buttons.js"></script>
 
 </body>
 </html>

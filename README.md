@@ -24,7 +24,7 @@ Check it out: [Template](https://grem1ly.github.io/actor_link_template/)
 
 ## How to Play
 
-  * **Step 1:** Once the website is loaded, you will be prompted with two random actor names ([list](docs/actor_names.csv)). Feel free to shuffle them individually by clicking the "Reshuffle" button below each name, or refresh the page to start over and be prompted with two new names.
+  * **Step 1:** Click "Play" to being. You will be prompted with two random actor names ([list](docs/data/actor_names.csv)). Feel free to shuffle them individually by clicking the "Reshuffle" button below each name, or refresh the page to start over and be prompted with two new names.
 
   * **Step 2:** If you can connect the actors immediately with a common movie, click the "Name The Linking Movie" button and fill out the prompt. To exit or "go back," click the "x" or the surrounding grey area. Once the prompt is completed and the "<span>&#10003;</span>" button is clicked, the connection is presented and the "game" is over. Refresh the page to play again.
 
