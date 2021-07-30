@@ -2,7 +2,6 @@
 body{
 	background: whitesmoke;
 	margin: 0px;
-	overflow: hidden;
 	height: 100%
 }
 
@@ -12,15 +11,21 @@ body{
 	color: white;
 	font-family: Georgia, Times, Times New Roman, serif; 
 	font-size: 22px;
+	height: 100vh;
+	overflow: hidden;
 }
 
 #start_image{
-	height: 110vh;
-	width: 100vw;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 105%;
+	width: 100%;
   	background-image: url("../background_images/start.jpg");
   	background-repeat: no-repeat;
   	background-size: cover;
-	background-position: center bottom;	
+	background-position: center bottom;
+	z-index: 50;	
 }
 
 #title{
@@ -29,6 +34,7 @@ body{
   	left: 50%;
   	transform: translate(-50%, -50%);
 	width: 100%;
+	z-index: 100;
 }
 
 #play {
