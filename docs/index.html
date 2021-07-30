@@ -261,6 +261,22 @@ function final_submit(){
   document.body.appendChild(final_link_space);
 }
 
+if (performance.navigation.type == 1) {
+  console.info( "This page is reloaded" );
+  document.getElementById("start_screen").style.display = "none";
+  document.getElementById("template").style.display = "block";
+  document.body.style.margin = "10px";
+  document.body.style.overflow = "visible";
+  get_actors();
+} else {
+  console.info( "This page is not reloaded");
+  document.getElementById("start_screen").style.display = "flex";
+  document.getElementById("template").style.display = "none";
+  document.body.style.margin = "0";
+  document.body.style.overflow = "hidden";
+  get_actors();
+}
+
 </script>
 
 <script type="text/javascript" src="./js/buttons.js"></script>

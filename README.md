@@ -24,7 +24,7 @@ Check it out: [Template](https://grem1ly.github.io/actor_link_template/)
 
 ## How to Play
 
-  * **Step 1:** Click "Play" to being. You will be prompted with two random actor names ([list](docs/data/actor_names.csv)). Feel free to shuffle them individually by clicking the "Reshuffle" button below each name, or refresh the page to start over and be prompted with two new names.
+  * **Step 1:** Click "Play" to being. You will be prompted with two random actor names ([list](docs/data/actor_names.csv)). Feel free to shuffle them individually by clicking the "Reshuffle" button below each name, or refresh<sup id="ref1">[1](#foot1)</sup> the page to start over and be prompted with two new names.
 
   * **Step 2:** If you can connect the actors immediately with a common movie, click the "Name The Linking Movie" button and fill out the prompt. To exit or "go back," click the "x" or the surrounding grey area. Once the prompt is completed and the "<span>&#10003;</span>" button is clicked, the connection is presented and the "game" is over. Refresh the page to play again.
 
@@ -35,3 +35,8 @@ Check it out: [Template](https://grem1ly.github.io/actor_link_template/)
   * **Step 5:** Repeat Steps 2 - 4.
 
   **Note:** All added connections can be edited after the fact. This means that if for some reason, I wanted to connect Idris Elba to Charlize Theron in Prometheus instead of Anthony Mackie in Avengers: Age of Ultron, I can select the box with Anthony Mackie's name, and change it to Charlize Theron just as with the box with the connecting movie. The preselected actors cannot be altered in this way.
+
+
+  </br></br>
+
+  <b id="foot1">1</b> Upon refresh, the start screen will be bypassed. The start screen will only reappear if the link is loaded in a new window. [↩](#ref1)
