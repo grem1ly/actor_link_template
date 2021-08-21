@@ -39,4 +39,4 @@ Check it out: [Template](https://grem1ly.github.io/actor_link_template/)
 
   </br></br>
 
-  <b id="foot1">1</b> Upon refresh, the start screen will be bypassed. The start screen will only reappear if the link is loaded in a new window. [↩](#ref1)
+  <b id="foot1">1</b> Upon refresh, the start screen will be bypassed. The start screen will only reappear if the link is loaded in a new window. [←](#ref1)
