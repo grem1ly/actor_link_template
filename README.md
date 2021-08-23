@@ -1,6 +1,6 @@
 # Actor Link Template
 
-Check it out: [Template](https://grem1ly.github.io/actor_link_template/)
+Check it out: [Template](https://strandem.github.io/actor_link_template/)
 
 **Note:** This template is specifically designed for mobile devices. Edits are still underway.
 
